@@ -1,0 +1,60 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<assert.h>
+int my_strlen(const char str[])//编写求字符串数组长度的函数
+{
+	int count=0;
+	while(*str++)
+	{
+		count++;
+	}
+	return count;
+}
+
+void reverse_str(char *left,char *right)
+{
+	assert(left);//指针进行有效性判断
+	assert(right);
+	while(left<right)//字符数组及要提取的字符串进行逆序
+	{
+		char temp=*left;
+		*left=*right;
+		*right=temp;
+		left++;
+		right--;
+	}
+}
+
+void reverse(char *str)
+{
+	char *start=str;
+	char *end=str+my_strlen(str)-1;
+	char *cur=NULL;
+	if(str==NULL||str[0]=='\0')//此处有两个判断条件，用或逻辑
+	{
+		return;
+	}
+	reverse_str(start,end);//逆序排列字符数组
+	while(*str)
+	{
+		cur=str;
+		while(*str!=' '&&*str!='\0')//注意此处条件是两个，包括*arr!=‘\0'
+		{
+			str++;
+		}
+		end=str-1;
+		reverse_str(cur,end);
+		if(*str==' ')str++;
+	}
+}
+
+int main()
+{
+	char arr[]="student a am i";
+	reverse(arr);
+	printf("%s\n",arr);
+	system("pause");
+	return 0;
+	system("pause");
+	return 0;
+}
