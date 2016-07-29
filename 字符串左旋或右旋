@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<assert.h>
+#include<string.h>
+void reverse(char *left,char *right)
+{
+	assert(left!=NULL);
+	assert(right!=NULL);
+	while(left<right)
+	{
+		char temp=*left;
+		*left=*right;
+		*right=temp;
+		left++;
+		right--;
+	}
+}
+void turnleft(char *arr,int k)          //左旋
+{
+   reverse(arr,arr+k-1);
+   reverse(arr+k,arr+strlen(arr)-1);
+   reverse(arr,arr+strlen(arr)-1);
+  }
+ // void turnright(char *arr,int k)       //右旋
+//{ // reverse(arr,arr+strlen(arr)-k-1);
+ //  reverse(arr+strlen(arr)-k,arr+strlen(arr)-1);
+  // reverse(arr,arr+strlen(arr)-1);
+  //}
+int main()
+{
+	char arr[]={"AABCD"};
+	int k=0;
+	printf("左/右旋次数k=:");
+	scanf("%d",&k);
+    turnleft(arr,k);
+    printf("%s",arr);
+    system("pause");
+    return 0;
+}
