@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include<stdlib.h>
+#include <string.h>
+
+void reverse_str(char *arr)
+{
+	int len = strlen(arr);
+	char tmp = arr[0];
+	arr[0] = arr[len-1];
+	arr[len-1] = '\0';
+	if(strlen(arr+1) >= 2)
+	reverse_str(arr+1);
+	arr[len-1] = tmp;
+
+}
+int main()
+{
+	char arr[] = "abcdef";
+	reverse_str(arr);
+	printf("%s\n", arr);
+	system("pause");
+	return 0;
+}
