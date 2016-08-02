@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdarg.h>
+#include <stdlib.h>
+void my_printf(char *format, ...)
+{
+	va_list arg;
+	va_start(arg, format);
+	while(*format)
+	{
+		switch(*format)
+		{
+		case 's':
+			{
+				char *tmp = va_arg(arg, char *);
+				while(*tmp)
+				{
+					putchar(*tmp);
+					tmp++;
+				}
+			}
+			break;
+
+		case 'c':
+			{
+				char tmp = va_arg(arg, char);
+				putchar(tmp);
+			}
+			break;
+		default:
+			putchar(*format);
+			break;
+		}
+		format++;
+	}
+	va_end(arg);
+}
+int main()
+{
+	my_printf("s ccc.\n","hello",'b','i','t');
+	system("pause");
+	return 0;
+}
