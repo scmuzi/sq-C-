@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<assert.h>
+int my_strlen1(const char *str)
+{
+   int count=0;
+   assert(str!=NULL);
+   while(*str++)
+   {
+  	 count++;
+   }
+   return count;
+}
+int my_strlen2(const char *str)
+{
+  const char *temp=str;
+  assert(str!=NULL);
+  while(*temp++);
+  return((int)temp-(int)str-1);
+}
+int my_strlen3(const char *str)
+{
+	assert(str!=NULL);
+	if(str[0]=='\0')
+		return 0;
+	else
+		return my_strlen3((char*)(&str[0]+1))+1;
+}
+int main()
+{
+  printf("%d\n",my_strlen1("hello,bit!"));
+  printf("%d\n",my_strlen2("hello,bit!"));
+  printf("%d\n",my_strlen3("hello,bit!"));
+  system("pause");
+  return 0;
+}
