@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<stdlib.h>
+int Digitsum(int n)
+{
+	int j=0;
+	int sum=0;
+	if(n!=0)
+	{
+		j=n%10;
+		n=n/10;
+		sum=j+Digitsum(n);
+	}
+	return sum;
+}
+int main()
+{
+  int Digitsum(n);
+  printf("%d\n",Digitsum(123));
+  system("pause");
+  return 0;
+}
