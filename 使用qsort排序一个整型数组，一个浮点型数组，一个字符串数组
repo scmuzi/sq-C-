@@ -1,0 +1,69 @@
+//整形数组排序
+#include<stdio.h>
+#include<stdlib.h>
+int swap(const void *elem1,const void *elem2)  
+{
+ return *(int *)elem1-*(int *)elem2;
+}
+int main()
+{
+	int arr[]={23,21,12,9,56,34,54};
+	int sz=sizeof(arr)/sizeof(arr[0]);
+	int i=0;
+    qsort(arr,sz,sizeof(int),swap);
+	for(i=0;i<sz;i++)
+	{
+	  printf("%d ",arr[i]);
+	}
+  system("pause");
+  return 0;
+}
+
+//浮点型数组排序
+#include<stdio.h>
+#include<stdlib.h>
+int swap(const void *elem1,const void *elem2)
+{
+ if((*(float*)elem1-*(float *)elem2)>0)
+	 return 1;
+ else if((*(float*)elem1-*(float *)elem2)<0)
+	 return -1;
+ else
+	 return 0;
+}
+int main()
+{
+	float arr[]={3.27f,2.32f,1.23f,5.23f};
+	int sz=sizeof(arr)/sizeof(arr[0]);
+	int i=0;
+    qsort(arr,sz,sizeof(int),swap);
+	for(i=0;i<sz;i++)
+	{
+	  printf("%f ",arr[i]);
+	}
+  system("pause");
+  return 0;
+}
+
+
+//字符型数组排序
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int str_cmp(const void *elem1,const void *elem2)
+{
+ return  strcmp(*(char **)elem1,*(char **)elem2);
+}
+int main()
+{
+	char *arr[]={"aaa","fff","eee"};
+	int sz=sizeof(arr)/sizeof(arr[0]);
+	int i=0;
+    qsort(arr,sz,sizeof(char *),str_cmp);
+	for(i=0;i<sz;i++)
+	{
+	  printf("%s ",arr[i]);
+	}
+  system("pause");
+  return 0;
+}
