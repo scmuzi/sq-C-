@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<stdlib.h>
+void Select_sort(int m[],int size)
+{
+	int i;
+	int k;
+	int t;
+	int j;
+	for(i=0;i<=size-1;++i)
+	{
+		k=i;
+		for(j=i+1;j<size;++j)
+		{
+			if(m[j]<m[k])
+				k=j;
+		}
+		if(k!=i)
+		{
+			t=m[i];
+			m[i]=m[k];
+			m[k]=t;
+		}
+	}
+}
+int main()
+{
+	int m[]={112,-34,22,45,-67,43};
+	int size=sizeof(m)/sizeof(m[0]);
+	int n=0;
+	Select_sort(m,size);
+	for(n=0;n<size;n++)
+	{
+	  printf("%d  ",m[n]);
+	}
+    system("pause");
+    return 0;
+}
