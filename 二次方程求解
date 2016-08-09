@@ -1,0 +1,30 @@
+#define EXP 0.0000000001
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+int main()
+{
+	 double a=0.0;
+	 double b= 0.0;
+	 double c= 0.0;
+   double d=b*b-4*a*c;
+   scanf("%lf %lf %lf",&a,&b,&c);
+   if((a>-EXP)&&(a<EXP))
+  {
+    printf("不是二次方程\n");
+  }
+  	if((d>-EXP)&&(d<EXP))
+	{
+		printf("有两个相等的实根:%lf\n",-b/(2*a));
+	}
+	else if(d>0.0)
+	{
+    printf("有两个不相等的实根:%lf %lf\n",(-b+sqrt(d))/(2*a),(-b-sqrt(d))/(2*a));
+	}
+	else
+	{
+	  printf("有两个共轭的复根\n");
+	}
+  system("pause");
+  return 0;
+}
