@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+  char ch;
+  char a;
+  char b;
+  printf("请输入字符:");
+  scanf("%c",&ch);
+ 
+  if((ch>='a')&&(ch<='z'))
+  {
+    a=ch-32;
+	printf("%c",a);
+  
+  }
+  if((ch>='A')&&(ch<='Z'))
+  {
+    b=ch+32;
+	printf("%c",b);
+  
+  }
+   if((ch>='0')&&(ch<='9'))
+  {
+     
+	printf("");
+  
+  
+  }
+  system("pause");
+  return 0;
