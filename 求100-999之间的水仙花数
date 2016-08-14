@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int a,b,c;
+	int m;
+	for(m=100;m<=999;m++)
+		{
+		   a=m%10;
+		   b=m/10%10;
+	     c=m/100;
+		   if(m==a*a*a+b*b*b+c*c*c)
+		     printf("%d\n",m);
+		}
+	       system("pause");
+         return 0;
+ }
