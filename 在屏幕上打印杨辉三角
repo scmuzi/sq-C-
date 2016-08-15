@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+ {
+int i = 0, j = 0, n= 0,k = 0;
+printf("请输入要输出的杨辉三角的行数:");
+scanf("%d", &n);
+for (i = 1; i <= n; i++)
+{
+k = 1; 
+for(j=1;j<=n-i;j++)
+{
+   printf("  ");
+
+}
+for (j = 1; j <= i; j++)
+{
+printf("%4d", k);
+k = k*(i - j) / j;
+}
+printf("\n");
+}
+ system("pause");
+ return 0;
+ }
